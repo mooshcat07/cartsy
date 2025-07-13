@@ -1,6 +1,11 @@
 import { Stack } from "expo-router";
+import ReduxProvider from '@/redux/Store'
 import '../global.css'
 
 export default function RootLayout() {
-  return <Stack />;
+  return(
+    <ReduxProvider>
+      <Stack />
+    </ReduxProvider>
+  )
 }
