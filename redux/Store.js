@@ -5,11 +5,11 @@ const redux = createContext(null)
 export default function ReduxProvider({children}){
     const [user, setuser] = useState(null);
     const [session, setsession] = useState(null);
-    const [isloading, setisloading] = useState(null);
+    const [isloading, setisloading] = useState(false);
 
     const dispatcher = {
-        user, 
-        session, 
+        user,
+        session,
         isloading,
     }
 
