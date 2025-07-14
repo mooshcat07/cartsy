@@ -1,7 +1,8 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import { Link } from "expo-router";
-import { useState } from "react";
+import { redux } from "@/redux/Store";
+import { Link, router } from "expo-router";
+import { useContext, useState } from "react";
 import { Text, View } from "react-native";
 
 type User = {
@@ -11,6 +12,7 @@ type User = {
 }
 
 export default function Signup(){
+    const { SignUpWithEmailPassword } = useContext<any>(redux)
     const [pending, setpending] = useState(false);
     const [userDetails, setuserDetails] = useState<User>({
         fullname: null,
@@ -22,7 +24,13 @@ export default function Signup(){
         setpending(true);
 
         try {
-            
+            await SignUpWithEmailPassword({
+                fullname: userDetails.fullname,
+                email: userDetails.email,
+                password: userDetails.password
+            });
+
+            router.replace('/protected/home');
         } catch (error : any) {
             alert(error.message);
         } finally {
