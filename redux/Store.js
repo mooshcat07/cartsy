@@ -5,7 +5,7 @@ const redux = createContext(null)
 export default function ReduxProvider({children}){
     const [user, setuser] = useState(null);
     const [session, setsession] = useState(null);
-    const [isloading, setisloading] = useState(true);
+    const [isloading, setisloading] = useState(false);
 
     const dispatcher = {
         user,

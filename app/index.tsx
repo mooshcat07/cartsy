@@ -7,13 +7,13 @@ import { Redirect } from "expo-router";
 export default function Index() {
   const { isloading, session } = useContext<any>(redux);
 
-  // if(!isloading && session){
-  //   return <Redirect href={'/protected/home'} />
-  // }
+  if(!isloading && session){
+    return <Redirect href={'/protected/home'} />
+  }
 
-  // if(!isloading && !session){
-  //   return <Redirect href={'/(auth)/signup'} />
-  // }
+  if(!isloading && !session){
+    return <Redirect href={'/(auth)/signup'} />
+  }
 
   return (
     <View
