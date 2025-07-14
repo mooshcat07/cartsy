@@ -48,7 +48,7 @@ export default function Signup(){
                 <Input placeholder="Enter your Email" value={userDetails.email} type="email" updater={e => setuserDetails(prev => ({...prev, email: e}))} />
                 <Input placeholder="Create your password" value={userDetails.password} type="password" updater={e => setuserDetails(prev => ({...prev, password: e}))} />
             </View>
-            <Button title="sign up" variant="default" action={Handlesignup} />
+            <Button title="sign up" isloading={pending} variant="default" action={Handlesignup} />
             <View className="relative my-12 flex items-center justify-center flex-row">
                 <Text className="text-xl font-medium text-zinc-500">Or sign up with</Text>
             </View>

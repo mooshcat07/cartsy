@@ -32,7 +32,7 @@ export default function Signin(){
                 <Input placeholder="Enter your Email" value={userDetails.email} type="email" updater={e => setuserDetails(prev => ({...prev, email: e}))} />
                 <Input placeholder="Enter your password" value={userDetails.password} type="password" updater={e => setuserDetails(prev => ({...prev, password: e}))} />
             </View>
-            <Button title="sign up" variant="default" action={Handlesignin} />
+            <Button title="sign up" variant="default" isloading={pending} action={Handlesignin} />
             <View className="relative my-12 flex items-center justify-center flex-row">
                 <Text className="text-xl font-medium text-zinc-500">Or sign in with</Text>
             </View>
