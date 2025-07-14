@@ -7,13 +7,13 @@ import { Redirect } from "expo-router";
 export default function Index() {
   const { isloading, session } = useContext<any>(redux);
 
-  if(!isloading && session){
-    return <Redirect href={'/protected/home'} />
-  }
+  // if(!isloading && session){
+  //   return <Redirect href={'/protected/home'} />
+  // }
 
-  if(!isloading && !session){
-    return <Redirect href={'/(auth)/signup'} />
-  }
+  // if(!isloading && !session){
+  //   return <Redirect href={'/(auth)/signup'} />
+  // }
 
   return (
     <View
@@ -22,8 +22,9 @@ export default function Index() {
       <Image
         source={staticImages.Logo}
         resizeMode="contain"
-        className="w-12 h-12 relative"
+        className="w-24 h-24 relative"
       />
+      <Text className="text-3xl font-semibold my-6 text-blue-500">Shopio</Text>
 
       {isloading &&
         <Text className="text-xl fontfont-semibold absolute bottom-10">Loading...</Text>

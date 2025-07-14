@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 import { Text, View } from "react-native";
 
@@ -29,8 +29,8 @@ export default function Signin(){
                 className="text-2xl font-medium"
             >Login to your account</Text>
             <View className="w-full relative flex gap-8 my-10">
-                <Input placeholder="Enter your Email" value={userDetails.email} updater={e => setuserDetails(prev => ({...prev, email: e}))} />
-                <Input placeholder="Enter your password" value={userDetails.password} updater={e => setuserDetails(prev => ({...prev, password: e}))} />
+                <Input placeholder="Enter your Email" value={userDetails.email} type="email" updater={e => setuserDetails(prev => ({...prev, email: e}))} />
+                <Input placeholder="Enter your password" value={userDetails.password} type="password" updater={e => setuserDetails(prev => ({...prev, password: e}))} />
             </View>
             <Button title="sign up" variant="default" action={Handlesignin} />
             <View className="relative my-12 flex items-center justify-center flex-row">
@@ -40,8 +40,11 @@ export default function Signin(){
                 {/* implement 3rd party 2Auth services, {google, apple, twitter} */}
             </View>
             <View className="w-full flex items-center justify-end flex-1 py-24">
-                <Text className="text-xl font-medium text-center text-zinc-600">Don't have an account?  
-                    <Text className="text-blue-500"> Signup</Text>
+                <Text className="text-lg font-medium text-center text-zinc-600">Don't have an account?  
+                    <Text 
+                        className="text-blue-500 ml-1 p-2" 
+                        onPress={() => router.back()}
+                    > Signup</Text>
                 </Text>
             </View>
         </View>

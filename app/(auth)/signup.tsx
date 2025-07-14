@@ -36,9 +36,9 @@ export default function Signup(){
                 className="text-2xl font-medium"
             >Create your account</Text>
             <View className="w-full relative flex gap-8 my-10">
-                <Input placeholder="Enter your fullname" value={userDetails.fullname} updater={e => setuserDetails(prev => ({...prev, fullname: e}))} />
-                <Input placeholder="Enter your Email" value={userDetails.email} updater={e => setuserDetails(prev => ({...prev, email: e}))} />
-                <Input placeholder="Create your password" value={userDetails.password} updater={e => setuserDetails(prev => ({...prev, password: e}))} />
+                <Input placeholder="Enter your fullname" value={userDetails.fullname} type="text" updater={e => setuserDetails(prev => ({...prev, fullname: e}))} />
+                <Input placeholder="Enter your Email" value={userDetails.email} type="email" updater={e => setuserDetails(prev => ({...prev, email: e}))} />
+                <Input placeholder="Create your password" value={userDetails.password} type="password" updater={e => setuserDetails(prev => ({...prev, password: e}))} />
             </View>
             <Button title="sign up" variant="default" action={Handlesignup} />
             <View className="relative my-12 flex items-center justify-center flex-row">
@@ -48,7 +48,7 @@ export default function Signup(){
                 {/* implement 3rd party 2Auth services, {google, apple, twitter} */}
             </View>
             <View className="w-full flex items-center justify-end flex-1 py-24">
-                <Text className="text-lg font-medium text-center text-black">Already have an account? <Link href={'/signin'} className="text-blue-500">Signin</Link></Text>
+                <Text className="text-lg font-medium text-center text-black">Already have an account? <Link href={'/signin'} className="text-blue-500 ml-1 p-2">Signin</Link></Text>
             </View>
         </View>
     )
