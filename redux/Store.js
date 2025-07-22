@@ -1,5 +1,5 @@
 import  { createContext, useState } from 'react'
-import { SignUpWithEmailAndPassword } from '@/lib/controllers/Authentication'
+import { SignInWithEmailAndPassword, SignUpWithEmailAndPassword } from '../lib/controllers/Authentication.js'
 
 const redux = createContext(null)
 
@@ -24,13 +24,31 @@ export default function ReduxProvider({children}){
         } catch (error) {
             throw new Error(error);
         }
-    } 
+    }
+
+    const SignInWithEmailPassword = async({email, password}) => {
+        try {
+            const { user, session } = await SignInWithEmailAndPassword({
+                email: email,
+                password: password
+            });
+
+            if(user, session){
+                setuser(user);
+                setsession(session);
+            }
+
+        } catch (error) {
+            throw new Error(error);
+        }
+    }
 
     const dispatcher = {
         user,
         session,
         isloading,
-        SignUpWithEmailPassword
+        SignUpWithEmailPassword,
+        SignInWithEmailPassword
     }
 
     return(

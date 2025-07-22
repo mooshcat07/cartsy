@@ -1,10 +1,12 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import { Link, router } from "expo-router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Text, View } from "react-native";
+import { redux } from '@/redux/Store'
 
 export default function Signin(){
+    const { SignInWithEmailPassword } = useContext(redux);
     const [pending, setpending] = useState(false);
     const [userDetails, setuserDetails] = useState<User>({
         email: null,
@@ -15,7 +17,12 @@ export default function Signin(){
         setpending(true);
 
         try {
-            
+            await SignInWithEmailPassword({
+                email: userDetails.email,
+                password: userDetails.password
+            });
+
+            router.navigate('/protected/home');
         } catch (error : any) {
             alert(error.message);
         } finally {
