@@ -1,4 +1,5 @@
 import { Tabs } from "expo-router";
+import { TouchableOpacity } from "react-native";
 
 export default function ProtectedLayout(){
 
@@ -10,6 +11,9 @@ export default function ProtectedLayout(){
             }}
         >
             <Tabs.Screen name="home" />
+            <Tabs.Screen name="search" />
+            <Tabs.Screen name="cart" />
+            <Tabs.Screen name="profile" />
         </Tabs>
     )
 }

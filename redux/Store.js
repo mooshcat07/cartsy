@@ -1,5 +1,5 @@
-import  { createContext, useState } from 'react'
-import { SignInWithEmailAndPassword, SignUpWithEmailAndPassword } from '../lib/controllers/Authentication.js'
+import  { createContext, useEffect, useState } from 'react'
+import { SignInWithEmailAndPassword, SignUpWithEmailAndPassword, HandleAutoAuthenticateUser } from '../lib/controllers/Authentication.js'
 
 const redux = createContext(null)
 
@@ -42,6 +42,21 @@ export default function ReduxProvider({children}){
             throw new Error(error);
         }
     }
+
+    const AutoLogin = async() => {
+        try {
+            const { user, session } = await HandleAutoAuthenticateUser();
+
+            setuser(user);
+            setsession(session);
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    }
+
+    useEffect(() => {
+        AutoLogin();    
+    }, []);
 
     const dispatcher = {
         user,
