@@ -1,10 +1,12 @@
 import { Stack } from "expo-router";
 import ReduxProvider from '@/redux/Store'
 import '../global.css'
+import { StatusBar } from "react-native";
 
 export default function RootLayout() {
   return(
     <ReduxProvider>
+      <StatusBar backgroundColor={'white'} translucent barStyle={'dark-content'} />
       <Stack
         screenOptions={{
           headerShown: false,

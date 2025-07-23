@@ -44,6 +44,7 @@ export default function ReduxProvider({children}){
     }
 
     const AutoLogin = async() => {
+        setisloading(true);
         try {
             const { user, session } = await HandleAutoAuthenticateUser();
 
@@ -51,6 +52,8 @@ export default function ReduxProvider({children}){
             setsession(session);
         } catch (error) {
             throw new Error(error.message);
+        } finally{
+            setisloading(false);
         }
     }
 

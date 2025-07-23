@@ -5,19 +5,19 @@ import { redux } from "@/redux/Store";
 import { Redirect } from "expo-router";
 
 export default function Index() {
-  const { isloading, session } = useContext<any>(redux);
+  const { isloading, user } = useContext<any>(redux);
 
-  if(!isloading && session){
+  if(!isloading && user){
     return <Redirect href={'/protected/home'} />
   }
 
-  if(!isloading && !session){
+  if(!isloading && !user){
     return <Redirect href={'/(auth)/signup'} />
   }
 
   return (
     <View
-      className="w-full flex-1 flex relative items-center justify-center"
+      className="w-full flex-1 flex relative items-center justify-center bg-white"
     >
       <Image
         source={staticImages.Logo}

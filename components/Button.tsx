@@ -16,7 +16,7 @@ export default function Button({ title, variant, isloading, action } : ButtonPro
             className={`w-full p-5 flex items-center justify-center rounded-lg ${variant === 'default' ? 'bg-blue-500' : 'bg-white border border-blue-600'}`}    
         >
             {isloading ?
-                <Text>Loading...</Text> :
+                <Text className='text-base font-semibold text-white'>Loading...</Text> :
                 <Text className={`text-base font-semibold ${variant === 'default' ? 'text-white' : 'text-blue-500'}`}>{title}</Text>
             }
         </TouchableOpacity>
