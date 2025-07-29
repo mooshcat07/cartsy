@@ -1,5 +1,5 @@
-import  { createContext, useEffect, useState } from 'react'
-import { SignInWithEmailAndPassword, SignUpWithEmailAndPassword, HandleAutoAuthenticateUser } from '../lib/controllers/Authentication.js'
+import { createContext, useEffect, useState } from 'react';
+import { HandleAutoAuthenticateUser, SignInWithEmailAndPassword, SignUpWithEmailAndPassword } from '../lib/controllers/Authentication.js';
 
 const redux = createContext(null)
 
@@ -76,4 +76,5 @@ export default function ReduxProvider({children}){
     )
 }
 
-export { redux }
+export { redux };
+

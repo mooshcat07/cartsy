@@ -1,8 +1,8 @@
-import { Image, Text, View } from "react-native";
-import { staticImages } from '@/redux/resourcebundler'
-import { useContext } from "react";
+import { staticImages } from '@/redux/resourcebundler';
 import { redux } from "@/redux/Store";
 import { Redirect } from "expo-router";
+import { useContext } from "react";
+import { ActivityIndicator, Image, Text, View } from "react-native";
 
 export default function Index() {
   const { isloading, user } = useContext<any>(redux);
@@ -27,7 +27,7 @@ export default function Index() {
       <Text className="text-3xl font-semibold my-6 text-blue-500">Shopio</Text>
 
       {isloading &&
-        <Text className="text-xl fontfont-semibold absolute bottom-10">Loading...</Text>
+        <ActivityIndicator className="text-black absolute bottom-10 w-9 h-9" />
       }
     </View>
   );

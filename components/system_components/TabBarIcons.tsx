@@ -1,5 +1,5 @@
-import { View, Text, Image } from 'react-native'
 import React from 'react'
+import { Image, View } from 'react-native'
 
 type TabBarProps = {
     title: string,
@@ -11,21 +11,21 @@ type TabBarProps = {
 const TabBarIcons = ({title, focused, activeIcon, disabledIcon} : TabBarProps) => {
   
     return (
-    <View>
+    <View className='items-center flex justify-center gap-1'>
       { focused ? 
         <>
             <Image
                 source={activeIcon}
                 resizeMode='cover'
-                className='w-2 h-2 relative'
+                className='w-8 h-8 relative'
             />
-            <Text className='text-xs font-semibold relative mt-1'>{title}</Text>
+          <View className='w-[7px] h-[7px] rounded-[50%] bg-zinc-700'></View>
         </>
         :
         <Image
             source={disabledIcon}
             resizeMode='contain'
-            className='w-2 h-2 relative'
+            className='w-8 h-8 relative'
         />
       }
     </View>

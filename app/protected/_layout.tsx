@@ -16,8 +16,8 @@ export default function ProtectedLayout(){
                         {props.children}
                     </TouchableOpacity>,
                 tabBarStyle: {
-                    height: 120,
-                    paddingTop: 40
+                    height: 90,
+                    paddingTop: 30
                 },
                 tabBarShowLabel: false
                 }
