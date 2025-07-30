@@ -2,10 +2,10 @@ import { redux } from '@/redux/Store';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import React, { useContext } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import Advertisement from './Advertisement';
+import Categories from './Categories';
 
 const HomeHeader = () => {
-    const { user } = useContext<any>(redux);
+  const { user } = useContext<any>(redux);
 
   return (
     <View className='w-full relative flex gap-2'>
@@ -22,13 +22,13 @@ const HomeHeader = () => {
         </View>
         <TouchableOpacity 
           activeOpacity={0.5}
-          className='relative p-3 bg-slate-50 rounded-xl'
+          className='relative p-3 bg-black rounded-xl'
         >
-          {false && <View className='w-2 h-2 rounded-[50%] absolute top-2 right-1'></View>}
-          <Ionicons name="notifications-outline" size={28} color="black" className='relative' />
+          <Ionicons name="notifications-outline" size={28} color="red" className='relative' />
         </TouchableOpacity>
       </View>
-      <Advertisement />
+      <Categories />
+      <Text className='text-3xl font-normal mb-8'>Our Products</Text>
     </View>
   )
 }

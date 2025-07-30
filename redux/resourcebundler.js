@@ -8,7 +8,9 @@ import Home from '@/assets/resources/icons/home.png'
 import Search from '@/assets/resources/icons/search.png'
 import Profile from '@/assets/resources/icons/user.png'
 // sample
+import controller from '@/assets/resources/samples/controller.jpg'
 import PC from '@/assets/resources/samples/pc.jpg'
+import phone from '@/assets/resources/samples/phone.jpg'
 
 const staticImages={
     Logo,
@@ -32,20 +34,87 @@ const SampleAadvertData = [
     },
     {
         title: 'X-BOX controller Genesis Edititon',
-        thumbnail: PC,
+        thumbnail: controller,
         id: 1002
     },
     {
         title: 'Iphone X. Second Hand',
-        thumbnail: PC,
+        thumbnail: phone,
         id: 1003
     },
     {
         title: 'Cosmic Express With the New Rog Nexus 2.0',
         thumbnail: PC,
-        id: 1008
+        id: 10015
+    },
+    {
+        title: 'X-BOX controller Genesis Edititon',
+        thumbnail: controller,
+        id: 100276
+    },
+    {
+        title: 'Iphone X. Second Hand',
+        thumbnail: phone,
+        id: 100365
+    },
+    {
+        title: 'Cosmic Express With the New Rog Nexus 2.0',
+        thumbnail: PC,
+        id: 100143
+    },
+    {
+        title: 'X-BOX controller Genesis Edititon',
+        thumbnail: controller,
+        id: 100232
+    },
+    {
+        title: 'Iphone X. Second Hand',
+        thumbnail: phone,
+        id: 100321
+    },
+    {
+        title: 'Cosmic Express With the New Rog Nexus 2.0',
+        thumbnail: PC,
+        id: 111
+    },
+    {
+        title: 'X-BOX controller Genesis Edititon',
+        thumbnail: controller,
+        id: 100342
+    },
+    {
+        title: 'Iphone X. Second Hand',
+        thumbnail: phone,
+        id: 100364
     },
 ]
 
-export { icons, SampleAadvertData, staticImages }
+const SampleCategories = [
+    {
+        title: 'computers',
+        thumbnail: PC,
+    },
+    {
+        title: 'controllers',
+        thumbnail: controller,
+    },
+    {
+        title: 'Phones',
+        thumbnail: phone,
+    },
+    {
+        title: 'computers',
+        thumbnail: PC,
+    },
+    {
+        title: 'controllers',
+        thumbnail: controller,
+    },
+    {
+        title: 'Phones',
+        thumbnail: phone,
+    },
+]
+
+export { icons, SampleAadvertData, SampleCategories, staticImages }
 
